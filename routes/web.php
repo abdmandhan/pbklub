@@ -14,9 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group([
+    'middleware'    => ['web', 'auth', 'role:admin|peneliti|guest'],
+    'as'            => 'bahan::',
+    'prefix'        => 'bahan',
+], function () {
+    Route::resource('bahan', 'BahanController');
+    Route::resource('pengajuan-bahan', 'PengajuanBahanController');
+});
+
+Route::group([
+    'middleware'    => ['web', 'auth', 'role:admin'],
+    'as'            => 'user::',
+    'prefix'        => 'user',
+], function () {
+    Route::resource('user', 'UserController');
+});

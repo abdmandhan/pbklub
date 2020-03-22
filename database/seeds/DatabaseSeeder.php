@@ -1,5 +1,6 @@
 <?php
 
+use App\Model\PengajuanBahan;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,6 +13,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        $this->call(BahanSeeder::class);
+        $this->call([
+            BahanSeeder::class,
+            RolesAndPermissionsSeeder::class,
+            UsersSeeder::class,
+            PengajuanBahanSeeder::class,
+        ]);
     }
 }

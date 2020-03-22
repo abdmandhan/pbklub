@@ -15,8 +15,8 @@ return [
     */
 
     'title' => 'PBKLUB',
-    'title_prefix' => 'PBKLUB',
-    'title_postfix' => 'PBKLUB',
+    'title_prefix' => '',
+    'title_postfix' => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -209,50 +209,61 @@ return [
 
     'menu' => [
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
             'text'        => 'Dashboard',
             'url'         => 'home',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Menu'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
+            'text'    => 'Bahan',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'Daftar Bahan',
+                    'url'  => 'bahan/bahan',
+                    'can'  => 'index.bahan'
+                ],
+                [
+                    'text' => 'Pengajuan Bahan',
+                    'url'  => 'bahan/pengajuan-bahan',
+                    'can'  => 'index.pengajuan-bahan'
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Logging',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'User Log',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Bahan Log',
                     'url'  => '#',
                 ],
             ],
         ],
-        ['header' => 'labels'],
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
+            'text'    => 'Settings',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Profile',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Change Password',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Users',
+                    'url'  => 'user/user',
+                    'can'  => 'index.user'
+                ],
+            ],
         ],
     ],
 

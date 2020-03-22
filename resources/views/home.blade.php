@@ -9,57 +9,27 @@
 @section('content')
 <p>Welcome to this beautiful admin panel.</p>
 <div class="row">
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Default Card Example</h3>
-            </div>
-            <div class="card-body">
-                <canvas id="mycanvas2" height="400vw" width="600vw"></canvas>
-            </div>
-        </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Default Card Example</h3>
+      </div>
+      <div class="card-body">
+        <canvas id="mycanvas2" height="400vw" width="600vw"></canvas>
+      </div>
     </div>
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Default Card Example</h3>
-            </div>
-            <div class="card-body">
-                <canvas id="mycanvas" height="400vw" width="600vw"></canvas>
-            </div>
-        </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Default Card Example</h3>
+      </div>
+      <div class="card-body">
+        <canvas id="mycanvas" height="400vw" width="600vw"></canvas>
+      </div>
     </div>
+  </div>
 </div>
-
-
-<table id="example" class="table table-bordered table-hover table-striped table-light" style="width:100%">
-    <thead>
-        <tr>
-            <th>IDBahan</th>
-            <th>Kode</th>
-            <th>Nama</th>
-            <th>Jenis</th>
-            <th>Tempat Penyimpanan</th>
-            <th>Jumlah</th>
-            <th>Harga</th>
-            <th>Satuan</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($data as $item)
-        <tr>
-            <td>{{ $item->IDBahan}}</td>
-            <td>{{ $item->Kode}}</td>
-            <td>{{ $item->Nama}}</td>
-            <td>{{ $item->Jenis}}</td>
-            <td>{{ $item->TempatPenyimpanan}}</td>
-            <td>{{ $item->Jumlah}}</td>
-            <td>{{ $item->Harga}}</td>
-            <td>{{ $item->Satuan}}</td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
 @stop
 
 @section('css')
@@ -68,7 +38,7 @@
 
 @section('js')
 <script>
-    var ctx_live2 = document.getElementById("mycanvas2");
+  var ctx_live2 = document.getElementById("mycanvas2");
 var myChart2 = new Chart(ctx_live2, {
   type: 'bar',
   data: {
@@ -152,9 +122,5 @@ var getData = function() {
 };
 
 getData();
-
-    $(document).ready(function() {
-        $('#example').DataTable();
-    });
 </script>
 @stop

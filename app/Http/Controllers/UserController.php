@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Bahan;
+use App\User;
 use Illuminate\Http\Request;
 
-class BahanController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class BahanController extends Controller
      */
     public function index()
     {
-        $data = Bahan::all();
-        return view('bahan.index', compact('data'));
+        $data = User::all();
+        return view('users.index', compact('data'));
     }
 
     /**
@@ -82,10 +82,5 @@ class BahanController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function chart()
-    {
-        return response()->json(Bahan::all(), 200);
     }
 }
